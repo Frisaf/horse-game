@@ -6,6 +6,15 @@ def input_int(arg):
         except ValueError:
             print("Skriv in en siffra")
 
+class Horse:
+    def __init__(self, name, speed, agility):
+        self.name = name
+        self.speed = speed
+        self.agility = agility
+    
+    def __str__(self):
+        return f"{self.name} {self.speed} {self.agility}"
+
 # def check_speed(speed):
 #     while True:
 #         if speed > 6:
@@ -29,4 +38,6 @@ while player_horse["Speed"] + player_horse["Agility"] != 8:
     if player_horse["Speed"] + player_horse["Agility"] != 8:
         print("Nä det måste vara exakt 8 totalt. Försök igen.")
 
-print(player_horse)
+horse_1 = Horse(player_horse["Name"], player_horse["Speed"], player_horse["Agility"])
+
+print(horse_1)
