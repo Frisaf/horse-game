@@ -1,0 +1,8 @@
+- Spelaren har en häst som måste få ett fint namn
+- Spelaren väljer 2 stats på hästen: speed & agility
+    - max 2 totalt
+- Varje runda i spelet rullar spelaren:
+    - Speed + 1D6
+    - Sedan rullar spelaren en 1D6 - agility och den differenesen dras av från speed.
+- Hästen flyttar sedan slutgiltiga speeden
+- Hästen ska nå 50 i summa för att komma i mål
