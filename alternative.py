@@ -67,6 +67,9 @@ while True:
     if check == True:
         horse_stats = str(Horse(name, speed, agility))
         split_horse_stats = horse_stats.split()
+        horses["Player Horse"]["Name"] = split_horse_stats[0]
+        horses["Player Horse"]["Speed"] = split_horse_stats[1]
+        horses["Player Horse"]["Agility"] = split_horse_stats[2]
 
         print(f"You've now created your horse!\nName: {split_horse_stats[0]}\nSpeed: {split_horse_stats[1]}\nAgility: {split_horse_stats[2]}")
 
