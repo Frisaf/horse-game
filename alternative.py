@@ -4,7 +4,7 @@ def input_int(arg):
             return int(input(arg))
         
         except ValueError:
-            print("Skriv in en siffra")
+            print("Enter a number instead")
 
 class Horse:
     def __init__(self, name, speed, agility):
@@ -17,33 +17,33 @@ class Horse:
 
     def check_speed():
         while True:
-            speed = input_int("Hur SNABB är din häst?\n> ")
+            speed = input_int("How FAST is your horse?\n> ")
             
             if speed > 6:
-                print("Din hästs SPEED kan inte överstiga ett värde på 6!")
+                print("Your horse's SPEED cannot exceed 6!")
             
             elif speed < 1:
-                print("Din hästs SPEED kan inte vara mindre än 1!")
+                print("Your horse's speed cannot be lower than 1!")
             
             else:
                 return speed
 
     def check_agility():
         while True:
-            agility = input_int("Hur SMIDIG är din häst?\n> ")
+            agility = input_int("How AGILE is your horse?\n> ")
 
             if agility > 6:
-                print("Din hästs AGILITY kan inte överstiga ett värde på 6!")
+                print("Your horse's AGILITY cannot exceed 6!")
             
             elif agility < 1:
-                print("Din hästs AGILITY kan inte vara mindre än 1!")
+                print("Your horse's AGILITY cannot be lower than 1!")
             
             else:
                 return agility
     
     def check_total(speed, agility):
         if speed + agility != 8:
-            print("Din totala summa måste vara 8. Försök igen.")
+            print("The sum of your SPEED and AGILITY has to be 8. Try again.")
             return False
         
         else:
