@@ -21,6 +21,14 @@ def create_computer_horse():
 
     return horse
 
+def clamp(stat_name, prompt, clamp) -> int:
+    while player_horse[stat_name] < 1:
+        player_horse[stat_name] = input_int(prompt)
+
+        if player_horse[stat_name] > clamp:
+            player_horse[stat_name] = 0
+            print(f"Det måste vara mindre än {clamp}")
+
 print("Skapa din häst!")
 
 player_horse = {
@@ -29,17 +37,24 @@ player_horse = {
     "Agility": 0,
 }
 computer_horse = create_computer_horse()
-
 player_horse["Name"] = input("Vad ska din häst heta?\n> ")
+stats_ok = True
 
 print("Din häst har speed och agility, max 6 på varje, men max 8 totalt.")
 
-while player_horse["Speed"] + player_horse["Agility"] != 8:
-    player_horse["Speed"] = input_int("Hur SNABB är din häst?\n> ")
-    player_horse["Agility"] = input_int("Hur SMIDIG är din häst?\n> ")
+while stats_ok == True:
+    # player_horse["Speed"] = input_int("Hur SNABB är din häst?\n> ")
+    # player_horse["Agility"] = input_int("Hur SMIDIG är din häst?\n> ")
+    clamp("Speed", "Hur SNABB är din häst?\n> ", 6)
+    clamp("Agility", "Hur SMIDIG är din häst?\n> ", 6)
 
-    if player_horse["Speed"] + player_horse["Agility"] != 8:
-        print("Nä det måste vara exakt 8 totalt. Försök igen.")
+    if player_horse["Speed"] + player_horse["Agility"] == 8:
+        stats_ok = False
+    
+    else:
+        print("Nä det måste vara totalt 8. Försök igen.")
+        player_horse["Speed"] = 0
+        player_horse["Agility"] = 0
 
 print(f"Din motståndare är {computer_horse["Name"]}")
 
